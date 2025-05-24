@@ -1,0 +1,31 @@
+//LOCALHOST
+
+###GET ALL SONGS
+GET http://localhost:3000/songs
+
+
+###GET A SINGLE SONG
+GET http://localhost:3000/song/6823eb675e5024b45f861e10
+
+###INSERT A NEW SONG
+POST http://localhost:3000/songs HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "Nothing’s Gonna Stop Us Now",
+    "singer" : "Starship",
+    "year" : "1987"
+}
+
+###UPDATE A SONG
+PUT http://localhost:3000/songs/6823f5b75e5024b45f861e12 HTTP/1.1
+content-type: application/json
+
+{
+    "name" : "Right Here Waiting",
+    "singer" : "Richard Marx",
+    "year" : "1989"
+}
+
+###DELETE A SONG
+DELETE http://localhost:3000/songs/6823f5b75e5024b45f861e12
