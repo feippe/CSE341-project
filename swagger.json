@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "title": "Songs API",
-    "description": "W03&4 Project: Songs - Gabriel Feippe",
+    "description": "W03&04 Project: Songs - Gabriel Feippe",
     "version": "1.0.0"
   },
-  "host": "cse341-songs-2dnx.onrender.com",
+  "host": "songs-5tbl.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

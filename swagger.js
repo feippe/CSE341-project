@@ -5,7 +5,7 @@ const doc = {
         title: 'Songs API',
         description: 'W03&04 Project: Songs - Gabriel Feippe'
     },
-    host: 'cse341-songs-2dnx.onrender.com',
+    host: 'songs-5tbl.onrender.com',
     schemes: ['https']
 };
 
