@@ -24,7 +24,7 @@ const createMovie = async (req, res) => {
     //#swagger.tags = ['Movies'];
     const movie = {
         name: req.headers.name,
-        description: req.header.description,
+        review: req.header.review,
         year: req.headers.year,
         director: req.headers.director,
         rating: req.headers.rating,
@@ -44,7 +44,7 @@ const updateMovie = async (req, res) => {
     const id = new ObjectId(req.params.id);
     const movie = {
         name: req.headers.name,
-        desc: req.header.description,
+        review: req.header.review,
         year: req.headers.year,
         director: req.headers.director,
         rating: req.headers.rating,
