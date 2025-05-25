@@ -191,12 +191,12 @@
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "year",
             "in": "header",
             "type": "string"
           },
           {
-            "name": "year",
+            "name": "review",
             "in": "header",
             "type": "string"
           },
@@ -272,7 +272,7 @@
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "review",
             "in": "header",
             "type": "string"
           },

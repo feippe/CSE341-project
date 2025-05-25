@@ -29,3 +29,46 @@ content-type: application/json
 
 ###DELETE A SONG
 DELETE http://localhost:3000/songs/6823f5b75e5024b45f861e12
+
+
+
+
+
+
+###GET ALL MOVIES
+GET http://localhost:3000/movies
+
+
+###GET A SINGLE MOVIE
+GET http://localhost:3000/movies/6823eb675e5024b45f861e10
+
+###INSERT A NEW MOVIE
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Movie name",
+    "review": "Movie review",
+    "year": "Year",
+    "director": "Movie director",
+    "rating": "Movie rating",
+    "duration": "Movie duration",
+    "imdbrating": "IMDB Rating"
+}
+
+###UPDATE A MOVIE
+PUT http://localhost:3000/movies/6823f5b75e5024b45f861e12 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Movie name",
+    "review": "Movie review",
+    "year": "Year",
+    "director": "Movie director",
+    "rating": "Movie rating",
+    "duration": "Movie duration",
+    "imdbrating": "IMDB Rating"
+}
+
+###DELETE A MOVIE
+DELETE http://localhost:3000/movies/6823f5b75e5024b45f861e12
