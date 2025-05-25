@@ -191,6 +191,11 @@
             "type": "string"
           },
           {
+            "name": "description",
+            "in": "header",
+            "type": "string"
+          },
+          {
             "name": "year",
             "in": "header",
             "type": "string"
@@ -263,6 +268,11 @@
           },
           {
             "name": "name",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "description",
             "in": "header",
             "type": "string"
           },

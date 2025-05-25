@@ -44,7 +44,7 @@ const updateMovie = async (req, res) => {
     const id = new ObjectId(req.params.id);
     const movie = {
         name: req.headers.name,
-        description: req.header.description,
+        desc: req.header.description,
         year: req.headers.year,
         director: req.headers.director,
         rating: req.headers.rating,
