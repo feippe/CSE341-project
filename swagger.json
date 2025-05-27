@@ -8,7 +8,8 @@
   "host": "songs-5tbl.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "host"
   ],
   "paths": {
     "/": {
@@ -75,6 +76,9 @@
           "204": {
             "description": "No Content"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -136,6 +140,9 @@
           "204": {
             "description": "No Content"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -157,6 +164,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -191,12 +201,12 @@
             "type": "string"
           },
           {
-            "name": "year",
+            "name": "review",
             "in": "header",
             "type": "string"
           },
           {
-            "name": "review",
+            "name": "year",
             "in": "header",
             "type": "string"
           },
@@ -224,6 +234,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -272,11 +285,6 @@
             "type": "string"
           },
           {
-            "name": "review",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "year",
             "in": "header",
             "type": "string"
@@ -306,6 +314,9 @@
           "204": {
             "description": "No Content"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -327,6 +338,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"

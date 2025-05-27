@@ -6,7 +6,7 @@ const doc = {
         description: 'W03&04 Project: Songs - Gabriel Feippe'
     },
     host: 'songs-5tbl.onrender.com',
-    schemes: ['https']
+    schemes: ['https', 'host']
 };
 
 const outputFile = './swagger.json';
