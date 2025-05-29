@@ -12,19 +12,6 @@
     "host"
   ],
   "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "Hello world!"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api-docs": {
       "get": {
         "description": "",
@@ -194,16 +181,16 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "You can get all movies from the database",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Movies retrieved successfully"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal server error"
           }
         }
       },
@@ -211,56 +198,77 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "You can create a new movie in the database",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
             "name": "name",
+            "description": "Name of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "Inception"
           },
           {
             "name": "review",
+            "description": "Review of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "A mind-bending thriller that blurs the lines between reality and dreams."
           },
           {
             "name": "year",
+            "description": "Release year of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "2010"
           },
           {
             "name": "director",
+            "description": "Director of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "Christopher Nolan"
           },
           {
             "name": "rating",
+            "description": "Rating of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "PG-13"
           },
           {
             "name": "duration",
+            "description": "Duration of the movie in minutes",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "148"
           },
           {
             "name": "imdbrating",
+            "description": "IMDb rating of the movie",
+            "type": "string",
+            "required": false,
             "in": "header",
-            "type": "string"
+            "example": "8.8"
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Movie created successfully"
           },
           "422": {
             "description": "Unprocessable Entity"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal server error"
           }
         }
       }
@@ -270,7 +278,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "You can get a movie by its ID from the database",
         "produces": [
           "application/json"
         ],
@@ -279,15 +287,17 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the movie to retrieve",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Movie retrieved successfully"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal server error"
           }
         }
       },
@@ -295,7 +305,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "You can update an existing movie in the database",
         "produces": [
           "application/json"
         ],
@@ -304,48 +314,76 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the movie to update",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
           },
           {
             "name": "name",
+            "description": "Name of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "Inception"
+          },
+          {
+            "name": "review",
+            "description": "Review of the movie",
+            "type": "string",
+            "required": true,
+            "in": "header",
+            "example": "A mind-bending thriller that blurs the lines between reality and dreams."
           },
           {
             "name": "year",
+            "description": "Release year of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "2010"
           },
           {
             "name": "director",
+            "description": "Director of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "Christopher Nolan"
           },
           {
             "name": "rating",
+            "description": "Rating of the movie",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "PG-13"
           },
           {
             "name": "duration",
+            "description": "Duration of the movie in minutes",
+            "type": "string",
+            "required": true,
             "in": "header",
-            "type": "string"
+            "example": "148"
           },
           {
             "name": "imdbrating",
+            "description": "IMDb rating of the movie",
+            "type": "string",
+            "required": false,
             "in": "header",
-            "type": "string"
+            "example": "8.8"
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Movie updated successfully"
           },
           "422": {
             "description": "Unprocessable Entity"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal server error"
           }
         }
       },
@@ -353,7 +391,7 @@
         "tags": [
           "Movies"
         ],
-        "description": "",
+        "description": "You can delete a movie by its ID from the database",
         "produces": [
           "application/json"
         ],
@@ -362,18 +400,20 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the movie to delete",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Movie deleted successfully"
           },
           "422": {
             "description": "Unprocessable Entity"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal server error"
           }
         }
       }
