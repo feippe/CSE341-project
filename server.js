@@ -6,6 +6,8 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+const oauth = require('./routes/oauth');
+
 app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,6 +22,8 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/', require('./routes'));
+
+app.use('/oauth', oauth);
 
 mongodb.initDb((err) => {
     if (err) {
