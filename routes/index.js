@@ -10,4 +10,6 @@ router.get('/', (req, res) => {
 router.use('/songs', require('./songs'));
 router.use('/movies', require('./movies'));
 
+router.use('/auth', require('./auth'));
+
 module.exports = router;
