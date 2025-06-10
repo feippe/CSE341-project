@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const MongoStore = require('connect-mongo');
+const cors = require('cors');
 
-
+const isProduction = process.env.NODE_ENV === 'production';
 
 const app = express();
 
@@ -21,10 +22,14 @@ mongodb.initDb((err) => {
         app.listen(port, () => { console.log(`Database is listening and node running on port ${port}`); });
         app
             .use(session({
-                secret: process.env.SESSION_SECRET || 'supersecretkey',
+                secret: process.env.SESSION_SECRET || 'idontknow',
                 resave: false,
                 saveUninitialized: false,
-                store: MongoStore.create({ client: mongodb.getDatabase() })
+                store: MongoStore.create({ client: mongodb.getDatabase() }),
+                cookie: {
+                    secure: isProduction,
+                    sameSite: isProduction ? 'none' : 'lax'
+                }
             }))
             .use(passport.initialize())
             .use(passport.session())
@@ -42,6 +47,15 @@ mongodb.initDb((err) => {
                 next();
             })
             .use('/', require('./routes'))
+            .use(cors({
+                origin: isProduction
+                    ? 'https://songs-5tbl.onrender.com'
+                    : 'http://localhost:3000',
+                credentials: true
+            }))
             ;
+        if (isProduction) {
+            app.enable('trust proxy');
+        }
     }
 });

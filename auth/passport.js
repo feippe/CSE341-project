@@ -1,13 +1,14 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongodb = require('../data/database');
+const { ObjectId } = require('mongodb');
 
 passport.serializeUser((user, done) => {
     done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
-    const user = await mongodb.getDatabase().db().collection('users').findOne({ _id: id });
+    const user = await mongodb.getDatabase().db().collection('users').findOne({ _id: new ObjectId(id) });
     done(null, user);
 });
 
